@@ -36,3 +36,66 @@
     transform: rotate(360deg);
   }
 }
+
+.search-form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 150px;
+  width: 100%;
+}
+.search-form input{
+  padding: 1rem;
+  background-color: #333;
+  border-radius: 5px;
+  width: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.search-form button{
+  padding: 1.1rem 1.5rem;
+  background-color: lightskyblue;
+  color: #fff;
+  font-size: 1.2rem;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* tasks */
+.view{
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.view input{
+  padding: .8rem;
+  background-color: #d3d3d3;
+  border: 0;
+  border-radius: 5px;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+ul form input{
+  background-color: khaki;
+  border: none;
+  padding: .8rem;
+  border-radius: 5px;
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.todo-and-btn-container{
+  border: 1px solid black;
+  width: 200px;
+  padding: 1.5rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
