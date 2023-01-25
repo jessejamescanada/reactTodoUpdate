@@ -2,47 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* search form */
 .search-form{
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
-  height: 150px;
+  margin: 20px auto;
+  margin-bottom: 8px;
   width: 100%;
 }
 .search-form input{
@@ -53,6 +20,7 @@
   color: #fff;
   font-size: 1.2rem;
 }
+/* buttons */
 .search-form button{
   padding: 1.1rem 1.5rem;
   background-color: lightskyblue;
@@ -61,13 +29,81 @@
   border: 0;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-box-shadow: 4px 4px 6px -3px #000000; 
+  box-shadow: 2px 3px 4px -3px #000000;
+}
+.btn-group{
+
+}
+.edit-btn, .delete-btn{
+  height: 2rem;
+  width: 4rem;
+  margin: 2px;
+  margin-top: 4px;
+  background-color: coral;
+  color: #fff;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: 4px 4px 6px -3px #000000; 
+  box-shadow: 2px 3px 4px -3px #000000;
+  cursor: pointer;
+}
+
+.save-btn, .cancel-btn{
+  height: 2rem;
+  width: 4rem;
+  margin: 2px;
+  margin-top: 4px;
+  background-color: coral;
+  color: #fff;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: 4px 4px 6px -3px #000000; 
+  box-shadow: 2px 3px 4px -3px #000000;
+  cursor: pointer;
+}
+.sort-btn{
+  height: 2rem;
+  width: 4rem;
+  margin: 2px;
+  margin-top: 4px;
+  background-color: coral;
+  color: #fff;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 3px;
+  -webkit-box-shadow: 4px 4px 6px -3px #000000; 
+  box-shadow: 2px 3px 4px -3px #000000;
+  cursor: pointer;
+}
+
+/* select */
+select{
+  padding: .4rem;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/*  */
+.name-label{
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+
+}
+.rating-label{
+  font-size: .9rem;
+  font-weight: 700;
 }
 
 /* tasks */
 .view{
-  height: 150px;
+  /* height: 150px; */
   display: flex;
   flex-direction: column;
+  margin: 10px;
+  
 }
 .view input{
   padding: .8rem;
@@ -78,6 +114,16 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+ul{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
 }
 
 ul form input{
@@ -93,6 +139,7 @@ ul form input{
 
 .todo-and-btn-container{
   border: 1px solid black;
+  border-radius: 10px;
   width: 200px;
   padding: 1.5rem;
   margin: auto;
