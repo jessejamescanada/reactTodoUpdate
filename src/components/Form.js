@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import '../App.css';
 
-const Form = ({addTask, tasks, sortTasks}) => {
+const Form = ({addTask, tasks, setTasks, sortTasks}) => {
     const [name, setName] = useState('')
+    const [error, setError] = useState('')
 
     const handleChange = e => {
         setName(e.target.value)
@@ -10,8 +11,20 @@ const Form = ({addTask, tasks, sortTasks}) => {
 
     const handleSubmit = e => {
         e.preventDefault()
+        if(name === ''){
+            setError('Please enter something!')
+            setTimeout(() => {
+                setError('')
+            }, 2000);
+        }else{
+        
         addTask(name)
         setName('')
+        }
+    }
+    const handleClear = () => {
+        localStorage.clear()
+        setTasks([])
     }
 
     // To sort we destructure tasks array and handlesort function from App.js. We create a copy of the array (sortArray) then sort it. Then call the sortTasks function sent from App.js and pass through the sortArray
@@ -28,14 +41,25 @@ const Form = ({addTask, tasks, sortTasks}) => {
             type="text" 
             value={name}
             onChange={handleChange}
+            maxLength='25'
         />
         <button>Add Task</button>
     </form>
-    <button 
-        onClick={handleSort}
-        className='sort-btn'
-        >Sort
-    </button>
+    <div className="error-btn-container">
+        <span className='error'>{error}</span>
+        <div className="sort-clear-btn-container">
+            <button 
+                onClick={handleSort}
+                className='sort-btn'
+                >Sort
+            </button>
+            <button
+                onClick={handleClear}
+                className='clear-btn'
+                >clear
+            </button>
+        </div>
+    </div>
     </>
   )
 }

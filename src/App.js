@@ -4,7 +4,19 @@ import Form from './components/Form';
 import Todo from './components/Todo';
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || [])
+
+  // localstorage
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  },[tasks])
+  // useEffect(() => {
+  //   const items = JSON.parse(localStorage.getItem('tasks'))
+  //   if(items) {
+  //     setTasks(items)
+  //   }
+  // },[])
+
   // add task
   const addTask = (name) => {
     const newTask = {
@@ -15,6 +27,7 @@ function App() {
     }
     setTasks([...tasks, newTask])
   }
+
   // delete task
   const deleteTask = id => {
     const remainingTasks = tasks.filter((item) => id !== item.id)
@@ -69,6 +82,7 @@ function App() {
       <Form 
           addTask={addTask}
           tasks={tasks}
+          setTasks={setTasks}
           sortTasks={sortTasks}
       />
       <div></div>

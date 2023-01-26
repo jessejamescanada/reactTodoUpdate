@@ -26,12 +26,14 @@ const Todo = ({name, completed, id, deleteTask, editTask, priority, updatePriori
 
   return (
     <>{isEditing ? (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='edit-form'>
             <input 
                 type="text" 
                 placeholder='Edit'
                 value={newName}
                 onChange={handleChange}
+                className='edit-input'
+                maxLength='25'
             />
             <div className="btn-group">
                 <button 
@@ -52,18 +54,19 @@ const Todo = ({name, completed, id, deleteTask, editTask, priority, updatePriori
             type="text" 
         /> */}
         <div className="todo-and-btn-container">
-            <label className='name-label'>{name}</label>
-            <label className='rating-label'>Rating</label>
-            <select 
-                value={priority2}
-                onChange={handlePriorityChange}
-                // {(e) => setPriority(e.target.value)}
-            >
-                <option value="1">Low</option>
-                <option value="2">Med</option>
-                <option value="3">High</option>
-            </select>
-        
+            <div className='name-label'><p>{name}</p></div>
+            <div className="rating-select-container">
+                <label className='rating-label'>Priority</label>
+                <select 
+                    value={priority2}
+                    onChange={handlePriorityChange}
+                    // {(e) => setPriority(e.target.value)}
+                >
+                    <option className='s1' value="1">Low</option>
+                    <option className='s2' value="2">Med</option>
+                    <option className='s3' value="3">High</option>
+                </select>
+            </div>
             <div className="btn-group">
                 <button onClick={() => setIsEditing(true)}
                     className='edit-btn'
